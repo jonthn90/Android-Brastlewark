@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inhabitantsFragment">
+
+    <fragment
+        android:id="@+id/inhabitantsFragment"
+        android:name="xyz.jonthn.brastlewark.view.InhabitantsFragment"
+        android:label="fragment_inhabitants"
+        tools:layout="@layout/fragment_inhabitants" >
+        <action
+            android:id="@+id/action_inhabitantsFragment_to_inhabitantDetailFragment"
+            app:destination="@id/inhabitantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inhabitantDetailFragment"
+        android:name="xyz.jonthn.brastlewark.view.InhabitantDetailFragment"
+        android:label="fragment_inhabitant_detail"
+        tools:layout="@layout/fragment_inhabitant_detail" />
+</navigation>
