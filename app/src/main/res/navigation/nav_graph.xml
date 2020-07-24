@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/inhabitantsFragment"
-        android:name="xyz.jonthn.brastlewark.view.InhabitantsFragment"
+        android:name="xyz.jonthn.brastlewark.view.ui.inhabitants.InhabitantsFragment"
         android:label="fragment_inhabitants"
         tools:layout="@layout/fragment_inhabitants" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/inhabitantDetailFragment"
-        android:name="xyz.jonthn.brastlewark.view.InhabitantDetailFragment"
+        android:name="xyz.jonthn.brastlewark.view.ui.inhabitantdetail.InhabitantDetailFragment"
         android:label="fragment_inhabitant_detail"
         tools:layout="@layout/fragment_inhabitant_detail" />
 </navigation>

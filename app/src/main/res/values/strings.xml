@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Brastlewark</string>
 
+    <string name="update">Actualizar</string>
+    <string name="search_by_name">Buscar por nombre</string>
+    <string name="prefesions">Profesiones</string>
+    <string name="friends">Amigos</string>
+    <string name="age"><![CDATA[Edad ->]]></string>
+    <string name="weight"><![CDATA[Peso ->]]></string>
+    <string name="height"><![CDATA[Altura ->]]></string>
+    <string name="hair_color"><![CDATA[Color de cabello ->]]></string>
+
 </resources>

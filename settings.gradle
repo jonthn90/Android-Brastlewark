@@ -1,2 +1,5 @@
+include ':usescases'
+include ':domain'
+include ':data'
 include ':app'
 rootProject.name = "Brastlewark"

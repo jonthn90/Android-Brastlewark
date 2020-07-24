@@ -1,11 +1,10 @@
-package xyz.jonthn.brastlewark.view
+package xyz.jonthn.brastlewark.view.ui
 
 import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import kotlinx.android.synthetic.main.activity_splash.*
 import xyz.jonthn.brastlewark.R
 import xyz.jonthn.brastlewark.databinding.ActivitySplashBinding
 
@@ -34,7 +33,8 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        binding.animationViewSplash.setAnimation(R.raw.forest)
+        //binding.animationViewSplash.setAnimation(R.raw.forest)
+        intentToMainActivity()
     }
 
     private fun intentToMainActivity() {

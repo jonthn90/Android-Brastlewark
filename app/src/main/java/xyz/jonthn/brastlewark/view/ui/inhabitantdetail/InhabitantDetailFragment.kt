@@ -1,4 +1,4 @@
-package xyz.jonthn.brastlewark.view
+package xyz.jonthn.brastlewark.view.ui.inhabitantdetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
