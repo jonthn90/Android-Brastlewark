@@ -9,14 +9,26 @@
         android:id="@+id/inhabitantsFragment"
         android:name="xyz.jonthn.brastlewark.view.ui.inhabitants.InhabitantsFragment"
         android:label="fragment_inhabitants"
-        tools:layout="@layout/fragment_inhabitants" >
+        tools:layout="@layout/fragment_inhabitants">
+
         <action
             android:id="@+id/action_inhabitantsFragment_to_inhabitantDetailFragment"
-            app:destination="@id/inhabitantDetailFragment" />
+            app:destination="@id/inhabitantDetailFragment"
+            app:enterAnim="@anim/translate_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/translate_out" />
     </fragment>
+
     <fragment
         android:id="@+id/inhabitantDetailFragment"
         android:name="xyz.jonthn.brastlewark.view.ui.inhabitantdetail.InhabitantDetailFragment"
         android:label="fragment_inhabitant_detail"
-        tools:layout="@layout/fragment_inhabitant_detail" />
+        tools:layout="@layout/fragment_inhabitant_detail">
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

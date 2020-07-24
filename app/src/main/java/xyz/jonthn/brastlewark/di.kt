@@ -20,6 +20,7 @@ import xyz.jonthn.brastlewark.view.ui.inhabitants.InhabitantsViewModel
 import xyz.jonthn.data.repository.InhabitantsRepository
 import xyz.jonthn.data.source.LocalDataSource
 import xyz.jonthn.data.source.RemoteDataSource
+import xyz.jonthn.usescases.FindInhabitantById
 import xyz.jonthn.usescases.GetInhabitants
 
 fun Application.initDI() {
@@ -48,6 +49,7 @@ private val scopesModule = module {
     }
 
     scope(named<InhabitantDetailFragment>()) {
-        viewModel { (id: Int) -> InhabitantDetailViewModel(id) }
+        viewModel { (id: Int) -> InhabitantDetailViewModel(id, get()) }
+        scoped { FindInhabitantById(get()) }
     }
 }

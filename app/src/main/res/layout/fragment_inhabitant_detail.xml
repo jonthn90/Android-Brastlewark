@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="xyz.jonthn.brastlewark.view.ui.inhabitantdetail.InhabitantDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_arrow_back_24dp"
+            app:title="@{viewmodel.inhabitant.name}"
             app:titleTextColor="@android:color/white" />
 
         <ScrollView
@@ -47,6 +51,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:placeholderImage="@drawable/ic_gnome"
+                    app:urlCover="@{viewmodel.inhabitant.thumbnail}"
                     app:viewAspectRatio="1.4" />
 
                 <androidx.cardview.widget.CardView
@@ -91,6 +96,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_weight="1"
+                                android:text="@{Integer.toString(viewmodel.inhabitant.age)}"
                                 android:textColor="@android:color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -124,6 +130,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_weight="1"
+                                android:text="@{Double.toString(viewmodel.inhabitant.weight)}"
                                 android:textColor="@android:color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -157,6 +164,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_weight="1"
+                                android:text="@{Double.toString(viewmodel.inhabitant.height)}"
                                 android:textColor="@android:color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -192,6 +200,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_weight="1"
+                                android:text="@{viewmodel.inhabitant.hair_color}"
                                 android:textColor="@android:color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -251,7 +260,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
-                        tools:listitem="@layout/professions_item"/>
+                        app:professions="@{viewmodel.inhabitant.professions}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/professions_item" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView_friends"
@@ -259,7 +270,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        tools:listitem="@layout/friends_item"/>
+                        app:friends="@{viewmodel.inhabitant.friends}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/friends_item" />
 
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
