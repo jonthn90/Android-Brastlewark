@@ -26,4 +26,7 @@ class RoomDataSource(db: InhabitantDatabase) : LocalDataSource {
         inhabitantDAO.findById(id).toDomainInhabitant()
     }
 
+    override suspend fun searchByName(name: String): List<Inhabitant> = withContext(Dispatchers.IO) {
+        inhabitantDAO.searchByName(name).map { it.toDomainInhabitant() }
+    }
 }

@@ -16,4 +16,7 @@ interface InhabitantDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertInhabitants(movies: List<Inhabitant>)
+
+    @Query("SELECT * FROM Inhabitant WHERE name LIKE '%' || :search || '%'")
+    fun searchByName(search: String?): List<Inhabitant>
 }

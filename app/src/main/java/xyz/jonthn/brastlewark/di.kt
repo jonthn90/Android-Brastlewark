@@ -22,6 +22,7 @@ import xyz.jonthn.data.source.LocalDataSource
 import xyz.jonthn.data.source.RemoteDataSource
 import xyz.jonthn.usescases.FindInhabitantById
 import xyz.jonthn.usescases.GetInhabitants
+import xyz.jonthn.usescases.SearchByName
 
 fun Application.initDI() {
     startKoin {
@@ -44,8 +45,9 @@ private val dataModule = module {
 
 private val scopesModule = module {
     scope(named<InhabitantsFragment>()) {
-        viewModel { InhabitantsViewModel(get()) }
+        viewModel { InhabitantsViewModel(get(), get()) }
         scoped { GetInhabitants(get()) }
+        scoped { SearchByName(get()) }
     }
 
     scope(named<InhabitantDetailFragment>()) {

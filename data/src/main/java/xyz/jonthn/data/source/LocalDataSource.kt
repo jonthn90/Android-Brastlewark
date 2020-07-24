@@ -7,4 +7,5 @@ interface LocalDataSource {
     suspend fun saveInhabitants(inhabitants: List<Inhabitant>)
     suspend fun getInhabitants(): List<Inhabitant>
     suspend fun findById(id: Int): Inhabitant
+    suspend fun searchByName(name: String): List<Inhabitant>
 }

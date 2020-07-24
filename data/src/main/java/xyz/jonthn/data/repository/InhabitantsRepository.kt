@@ -13,7 +13,6 @@ class InhabitantsRepository(
         if (localDataSource.isEmpty()) {
             val inhabitants = remoteDataSource.getInhabitants()
             localDataSource.saveInhabitants(inhabitants)
-
             println("empty")
         } else {
             println("not empty")
@@ -22,4 +21,7 @@ class InhabitantsRepository(
     }
 
     suspend fun findById(id: Int): Inhabitant = localDataSource.findById(id)
+
+    suspend fun searchByName(name: String): List<Inhabitant> = localDataSource.searchByName(name)
+
 }
