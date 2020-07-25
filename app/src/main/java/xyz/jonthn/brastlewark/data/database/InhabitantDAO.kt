@@ -15,7 +15,7 @@ interface InhabitantDAO {
     fun inhabitantsCount(): Int
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertInhabitants(movies: List<Inhabitant>)
+    fun insertInhabitants(inhabitants: List<Inhabitant>)
 
     @Query("SELECT * FROM Inhabitant WHERE name LIKE '%' || :search || '%'")
     fun searchByName(search: String?): List<Inhabitant>

@@ -64,12 +64,12 @@ class InhabitantsRepositoryTest {
     fun `findById calls local data source`() {
         runBlocking {
 
-            val movie = mockedInhabitant.copy(id = 5)
-            whenever(localDataSource.findById(5)).thenReturn(movie)
+            val inhabitant = mockedInhabitant.copy(id = 5)
+            whenever(localDataSource.findById(5)).thenReturn(inhabitant)
 
             val result = inhabitantsRepository.findById(5)
 
-            assertEquals(movie, result)
+            assertEquals(inhabitant, result)
         }
     }
 
